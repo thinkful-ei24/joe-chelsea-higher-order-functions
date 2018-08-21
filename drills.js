@@ -74,7 +74,27 @@ carCrashWarning('Centinela Ave and Olympic Blvd');
 //     .forEach(num => console.log(num))
 
 let turtleMvmnts = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
 let newMoves = turtleMvmnts.filter(num => num[0] >= 0 && num[1] >= 0);
 let noOfSteps = newMoves.map(num => num[0] + num[1]);
+
 noOfSteps.forEach(num => console.log(num));
+
 //---------------------------------------------------------------------
+
+// Reduce
+
+// every word cap last letter - if word is 3 letters long add a space
+// make a string
+
+let givenStr = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+let strArr = givenStr.split(" ");
+
+let result = strArr.reduce((sentence, word) => {
+    if (word.length === 3) sentence += " "
+    else sentence += word.slice(-1).toUpperCase();
+    return sentence;
+}, "");
+
+console.log(result);
+
