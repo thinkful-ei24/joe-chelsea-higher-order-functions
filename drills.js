@@ -68,20 +68,13 @@ carCrashWarning('Centinela Ave and Olympic Blvd');
 //---------------------------------------------------------------------
 //Turtle Movements
 
-let turtleMvmnts = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]
-
-let newMoves = turtleMvmnts.filter(num => num[0] >= 0 && num[1] >= 0);
-
 // return turtleMvmnts
 //     .filter(num => num[0] >= 0 && num[1] >= 0)
 //     .map(num => num[0] + num[1]
 //     .forEach(num => console.log(num))
 
+let turtleMvmnts = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+let newMoves = turtleMvmnts.filter(num => num[0] >= 0 && num[1] >= 0);
 let noOfSteps = newMoves.map(num => num[0] + num[1]);
-
-
-console.log(newMoves);
-console.log(noOfSteps);
-noOfSteps.forEach(num => console.log(num))
-
-//-------------------------------------------------------------------
+noOfSteps.forEach(num => console.log(num));
+//---------------------------------------------------------------------
