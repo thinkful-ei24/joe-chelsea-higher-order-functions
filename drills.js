@@ -13,7 +13,7 @@ repeat(hello, 5);
 repeat(goodbye, 5);
 
 
-/////////////////////////////////////////////////////////////////////
+//---------------------------------------------------------------------
 //---- Number 2
 
 function filter(array, fn) {   
@@ -39,5 +39,30 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+
+//---------------------------------------------------------------------
+// Functions as return values
+
+let hazardWarningCreator = (typeOfWarning) => {
+    let warningCounter = 0;
+
+    return (location) => {
+        warningCounter++;
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const stormWarning = hazardWarningCreator('Wet roads ahead');
+const carCrashWarning = hazardWarningCreator('Crashed cars in left lane');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
+
+stormWarning('Centinela Ave and Olympic Blvd');
+carCrashWarning('Centinela Ave and Olympic Blvd');
+
 
 //---------------------------------------------------------------------
